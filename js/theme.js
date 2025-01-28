@@ -5,113 +5,99 @@ let bgInput = document.getElementById('bg_input');
 let fgInput = document.getElementById('fg_input');
 let accentInput = document.getElementById('accent_input');
 
-switcher.onclick = () => switcher.checked ? darkTheme() : lightTheme();
-
-localStorage.getItem('theme') === 'dark' ? darkTheme() : lightTheme();
-
-function darkTheme() {
-	switcher.checked = true;
-	localStorage.setItem('theme', 'dark');
-	document.body.setAttribute('theme', 'dark');
-
-	setColors('dark');
+// Initialize theme based on saved preference or default
+if (localStorage.getItem('theme') === 'dark') {
+  applyTheme('dark');
+} else {
+  applyTheme('light');
 }
 
-function lightTheme() {
-	switcher.checked = false;
-	localStorage.setItem('theme', 'light');
-	document.body.setAttribute('theme', 'light');
+// Event Listeners
+switcher.addEventListener('click', () =>
+  switcher.checked ? applyTheme('dark') : applyTheme('light')
+);
 
-	setColors('light');
+buttonReset.addEventListener('click', resetColors);
+buttonApply.addEventListener('click', applyCustomColors);
+
+// Function to apply theme (light or dark)
+function applyTheme(themeName) {
+  switcher.checked = themeName === 'dark';
+  localStorage.setItem('theme', themeName);
+  document.body.setAttribute('theme', themeName);
+
+  loadColors(themeName);
 }
 
-buttonReset.onclick = () => {
-	let themeName = localStorage.getItem('theme');
-	let root = document.querySelector(`[theme="${themeName}"]`);
+// Function to apply custom colors
+function applyCustomColors() {
+  const themeName = localStorage.getItem('theme');
+  const root = document.querySelector(`[theme="${themeName}"]`);
 
-	localStorage.removeItem(themeName);
+  const bgColor = bgInput.value.trim();
+  const fgColor = fgInput.value.trim();
+  const accentColor = accentInput.value.trim();
 
-	root.style.setProperty('--background', null);
-	root.style.setProperty('--foreground', null);
-	root.style.setProperty('--accent', null);
+  if (isValidColor(bgColor)) root.style.setProperty('--background', bgColor);
+  if (isValidColor(fgColor)) root.style.setProperty('--foreground', fgColor);
+  if (isValidColor(accentColor)) root.style.setProperty('--accent', accentColor);
 
-	resetColors(themeName);
-};
-
-buttonApply.onclick = () => {
-	let themeName = localStorage.getItem('theme');
-	let root = document.querySelector(`[theme="${themeName}"]`);
-	let bgColor = getComputedStyle(root).getPropertyValue('--background');
-	let fgColor = getComputedStyle(root).getPropertyValue('--foreground');
-	let accentColor = getComputedStyle(root).getPropertyValue('--accent');
-
-
-	if (bgInput.value !== bgColor) {
-		bgColor = bgInput.value;
-		root.style.cssText = `--background: ${bgColor};`;
-	}
-
-	if (fgInput.value !== fgColor) {
-		fgColor = fgInput.value;
-		root.style.cssText += `--foreground: ${fgColor};`;
-	}
-
-	if (accentInput.value !== accentColor) {
-		accentColor = accentInput.value;
-		root.style.cssText += `--accent: ${accentColor};`;
-	}
-
-	let colors =
-	{
-		'background': bgColor,
-		'foreground': fgColor,
-		'accent': accentColor
-	};
-
-	localStorage.setItem(themeName, JSON.stringify(colors));
+  saveColors(themeName, {
+    background: bgColor,
+    foreground: fgColor,
+    accent: accentColor,
+  });
 }
 
-function resetColors(themeName) {
-	let root = document.querySelector(`[theme="${themeName}"]`);
+// Function to reset colors to default
+function resetColors() {
+  const themeName = localStorage.getItem('theme');
+  const root = document.querySelector(`[theme="${themeName}"]`);
 
-	let bgColor = getComputedStyle(root).getPropertyValue('--background');
-	let fgColor = getComputedStyle(root).getPropertyValue('--foreground');
-	let accentColor = getComputedStyle(root).getPropertyValue('--accent');
+  root.style.removeProperty('--background');
+  root.style.removeProperty('--foreground');
+  root.style.removeProperty('--accent');
 
-	let colors =
-	{
-		'background': bgColor,
-		'foreground': fgColor,
-		'accent': accentColor
-	};
-
-	localStorage.setItem(themeName, JSON.stringify(colors));
-
-	bgInput.value = colors['background'].replace(/\s/g, '');
-	fgInput.value = colors['foreground'].replace(/\s/g, '');
-	accentInput.value = colors['accent'].replace(/\s/g, '');
+  saveDefaultColors(themeName);
+  loadColors(themeName);
 }
 
-function setColors(themeName) {
-	let root = document.querySelector(`[theme="${themeName}"]`);
+// Load and apply colors from localStorage
+function loadColors(themeName) {
+  const root = document.querySelector(`[theme="${themeName}"]`);
 
-	root.style.setProperty('--background', null);
-	root.style.setProperty('--foreground', null);
-	root.style.setProperty('--accent', null);
+  if (localStorage.getItem(themeName)) {
+    const colors = JSON.parse(localStorage.getItem(themeName));
+    root.style.setProperty('--background', colors.background);
+    root.style.setProperty('--foreground', colors.foreground);
+    root.style.setProperty('--accent', colors.accent);
 
-	if (localStorage.getItem(themeName) !== null) {
-		let colors = JSON.parse(localStorage.getItem(themeName));
+    bgInput.value = colors.background;
+    fgInput.value = colors.foreground;
+    accentInput.value = colors.accent;
+  } else {
+    saveDefaultColors(themeName);
+    loadColors(themeName);
+  }
+}
 
-		root.style.cssText = `
-		--background: ${colors['background']};
-		--foreground: ${colors['foreground']};
-		--accent: ${colors['accent']};
-		`;
+// Save colors to localStorage
+function saveColors(themeName, colors) {
+  localStorage.setItem(themeName, JSON.stringify(colors));
+}
 
-		bgInput.value = colors['background'].replace(/\s/g, '');
-		fgInput.value = colors['foreground'].replace(/\s/g, '');
-		accentInput.value = colors['accent'].replace(/\s/g, '');
-	} else {
-		resetColors(themeName);
-	}
+// Save default colors for a theme
+function saveDefaultColors(themeName) {
+  const defaultColors = themeName === 'dark'
+    ? { background: '#121212', foreground: '#ffffff', accent: '#bb86fc' }
+    : { background: '#ffffff', foreground: '#000000', accent: '#6200ee' };
+
+  saveColors(themeName, defaultColors);
+}
+
+// Validate if a color is valid (basic check)
+function isValidColor(color) {
+  const s = new Option().style;
+  s.color = color;
+  return s.color !== '';
 }

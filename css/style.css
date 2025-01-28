@@ -24,6 +24,7 @@
 [theme="dark"] {
   --background: #17171a;
   --foreground: #91949c;
+  --accent2: #69696e;
   --accent: #81a1c1;
   --input: #212125;
 }
@@ -34,7 +35,9 @@
   margin: 0px;
   align-items: center;
   justify-content: center;
+  transition: all 01.0s ease-in-out; /* Adjust timing and easing as needed */
 }
+
 
 body {
   background: var(--background);
@@ -102,6 +105,7 @@ a {
   text-decoration: none;
   transition: 0.5s;
 }
+
 
 .big-icons {
   margin: 40px;
@@ -347,7 +351,8 @@ input[type="text"] {
 
 /* Container for the quote */
 #quote {
-  background-color: white;
+  
+  background-color: var(--background);
   border-radius: 16px;
   padding: 20px;
   max-width: 600px;
@@ -508,9 +513,55 @@ input[type="text"] {
   background-color: #5e81ac;
 }
 
-.link-box {
-  padding: 8px;
-  border-radius: 20px;
-  background-color: white;
-  margin-bottom: 8px;
+/* Dark mode styles for link-box */
+[theme="dark"] .link-box {
+  background-color: var(--background); /* Use dark background */
+  color: var(--foreground); /* Use dark mode text color */
+  border-radius: 10px;
+
+  box-shadow: 0 0 6px rgba(20, 0, 0, 0.3); /* Shadow on the whole boundary */
+
+  /* Shadow on the whole boundary */
+  margin: 2%;
+}
+
+
+/* Dark mode styles for dynamic-links-menu */
+[theme="dark"] .dynamic-links-menu a {
+  color: var(--accent); /* Accent color for links */
+  text-decoration: none;
+}
+
+[theme="dark"] .dynamic-links-menu a:hover {
+  color: var(--foreground); /* Brighter on hover */
+  text-decoration: underline;
+}
+
+/* Dark mode styles for quotebox */
+[theme="dark"] .quotebox {
+  background-color: var(--background); /* Match dark background */
+  color: var(--foreground); /* Text color for dark mode */
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(20, 0, 0, 0.3); /* Shadow on the whole boundary */
+}
+
+
+
+/* Dark mode styles for quote text */
+[theme="dark"] #quoteText {
+  color: var(--accent); /* Text adapts to dark mode */
+}
+
+[theme="dark"] #quoteAuthor {
+  color: var(--accent); /* Accent color for author */
+}
+
+/* Dark mode styles for open-link-form-button */
+[theme="dark"] .open-link-form-button {
+  background-color: var(--accent); /* Accent color for button */
+  color: var(--foreground); /* Light text */
+}
+
+[theme="dark"] .open-link-form-button:hover {
+  background-color: #627b94; /* Slightly darker on hover */
 }
