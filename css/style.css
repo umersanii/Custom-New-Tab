@@ -83,7 +83,7 @@ body {
   justify-content: center;
   width: 24px;
   height: 24px;
-  margin: 18px;
+  margin: 30px;
   transition: 0.5s;
 }
 
@@ -501,12 +501,13 @@ input[type="text"] {
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 20px;
+  border-radius: 5px;
   cursor: pointer;
   width: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .open-link-form-button:hover {
@@ -518,10 +519,9 @@ input[type="text"] {
   background-color: var(--background); /* Use dark background */
   color: var(--foreground); /* Use dark mode text color */
   border-radius: 10px;
+  border: 2px solid var(--accent); /* Add border with accent color */
 
   box-shadow: 0 0 6px rgba(20, 0, 0, 0.3); /* Shadow on the whole boundary */
-
-  /* Shadow on the whole boundary */
   margin: 2%;
 }
 
@@ -543,6 +543,8 @@ input[type="text"] {
   color: var(--foreground); /* Text color for dark mode */
   border-radius: 16px;
   box-shadow: 0 0 10px rgba(20, 0, 0, 0.3); /* Shadow on the whole boundary */
+  border: 2px solid var(--accent); /* Add border with accent color */
+  
 }
 
 
@@ -553,7 +555,7 @@ input[type="text"] {
 }
 
 [theme="dark"] #quoteAuthor {
-  color: var(--accent); /* Accent color for author */
+  color: var(--foreground); /* Accent color for author */
 }
 
 /* Dark mode styles for open-link-form-button */
