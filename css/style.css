@@ -121,7 +121,23 @@ a {
   color: var(--accent);
   transform: scale(2);
   transition: 0.3s;
+  
 }
+
+.main a:hover::after {
+  content: attr(data-alt); /* Display the alt text from the data-alt attribute */
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-size: 6px;
+}
+
 
 .header {
   position: relative;
