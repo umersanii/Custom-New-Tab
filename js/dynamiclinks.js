@@ -58,21 +58,23 @@ document
     document.getElementById("link-form-popup").style.display = "none";
   });
 
-document
+  document
   .getElementById("add-custom-link")
   .addEventListener("click", function () {
-    const url = document.getElementById("custom-link-url").value;
-    const name = document.getElementById("custom-link-name").value;
+    let url = document.getElementById("custom-link-url").value.trim();
+    const name = document.getElementById("custom-link-name").value.trim();
 
     if (url && name) {
+      if (!url.startsWith("http://") && !url.startsWith("https://")) {
+        url = "https://" + url; 
+      }
+
       const newLink = { url: url, name: name };
 
       const links = JSON.parse(localStorage.getItem("customLinks")) || [];
-
       links.push(newLink);
 
       localStorage.setItem("customLinks", JSON.stringify(links));
-
       loadCustomLinks();
 
       document.getElementById("custom-link-url").value = "";
@@ -82,5 +84,4 @@ document
       alert("Please fill in both fields.");
     }
   });
-
 window.onload = loadCustomLinks;
