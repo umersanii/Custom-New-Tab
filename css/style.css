@@ -19,13 +19,15 @@
   --foreground: #404040;
   --accent: #5e81ac;
   --input: #d3d3d3;
+  --boxbackground: #f5f5f5;
 }
 
 [theme="dark"] {
   --background: #17171a;
-  --foreground: #91949c;
+  --foreground: #cdced0;
   --accent: #81a1c1;
   --input: #212125;
+  --boxbackground: #525252;
 }
 
 * {
@@ -71,6 +73,7 @@ body {
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
+  
 }
 
 .mainsmall a {
@@ -80,7 +83,7 @@ body {
   justify-content: center;
   width: 24px;
   height: 24px;
-  margin: 18px;
+  /* margin: 18px; */
   transition: 0.5s;
 }
 
@@ -347,7 +350,7 @@ input[type="text"] {
 
 /* Container for the quote */
 #quote {
-  background-color: white;
+  background-color: var(--boxbackground);
   border-radius: 16px;
   padding: 20px;
   max-width: 600px;
@@ -511,6 +514,7 @@ input[type="text"] {
 .link-box {
   padding: 8px;
   border-radius: 20px;
-  background-color: white;
+  background-color: var(--boxbackground);
   margin-bottom: 8px;
+  padding-top: 32px;
 }
