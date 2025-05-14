@@ -1,0 +1,62 @@
+[
+  {
+    "url": "https://github.com",
+    "name": "GitHub",
+    "icon": "icons8-github-50.svg"
+  },
+  {
+    "url": "https://mail.google.com",
+    "name": "Gmail",
+    "icon": "icons8-gmail-50.svg"
+  },
+  {
+    "url": "https://drive.google.com",
+    "name": "Drive",
+    "icon": "icons8-google-drive-50.svg"
+  },
+  {
+    "url": "https://calendar.google.com",
+    "name": "Calendar",
+    "icon": "icons8-google-calendar-50.svg"
+  },
+  {
+    "url": "https://chat.openai.com",
+    "name": "ChatGPT",
+    "icon": "icons8-chatgpt-50.svg"
+  },
+  {
+    "url": "https://www.youtube.com",
+    "name": "YouTube",
+    "icon": "icons8-youtube-50.svg"
+  },
+  {
+    "url": "https://www.linkedin.com",
+    "name": "LinkedIn",
+    "icon": "icons8-linkedin-50.svg"
+  },
+  {
+    "url": "https://www.notion.so",
+    "name": "Notion",
+    "icon": "notion-logo.svg"
+  },
+  {
+    "url": "https://www.coursera.org",
+    "name": "Coursera",
+    "icon": "coursera.svg"
+  },
+  {
+    "url": "https://www.edx.org",
+    "name": "edX",
+    "icon": "edx-logo-elm.svg"
+  },
+  {
+    "url": "https://scholar.google.com",
+    "name": "Scholar",
+    "icon": "Google Scholar.png"
+  },
+  {
+    "url": "https://www.researchgate.net",
+    "name": "ResearchGate",
+    "icon": "researchgate.png"
+  }
+]

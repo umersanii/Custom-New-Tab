@@ -1,14 +1,15 @@
 # My Web Homepage
 
-![Preview](preview.png)
+![Homepage Preview](preview.png)
 
-## What’s Inside
+## Features
 
-- **Weather Settings**: Enter your API key and city to get weather updates. Choose between Celsius and Fahrenheit.
-- **Greeting**: Personalize how I greet you.
-- **Theme Customization**: Change the colors of the background, text, and accents.
-- **Quick Links**: Easy access to Gmail, YouTube, WhatsApp, and more.
+- **Weather Integration**: Enter your API key and city to receive real-time weather updates. Easily switch between Celsius and Fahrenheit.
+- **Personalized Greetings**: Customize the greeting message to make your homepage feel more personal.
+- **Theme Customization**: Adjust background, text, and accent colors to match your style.
+- **Quick Access Links**: Instantly open Gmail, YouTube, WhatsApp, and other favorite sites.
+- **Unified Search**: Use a powerful multi-search engine system for all your search needs.
 
 ## Contributing
 
-Want to help out or suggest something? Feel free to reach out!
+Have ideas or suggestions? Open an issue or submit a pull request—your feedback is welcome!

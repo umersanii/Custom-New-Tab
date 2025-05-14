@@ -77,11 +77,21 @@
         <!-- Popup form for adding custom links -->
         <div id="link-form-popup" class="popup-form" style="display: none">
           <h3>Add New Link</h3>
-		<input type="text" id="custom-link-url" placeholder="Enter URL" onfocus="document.querySelector('.search-form__input').disabled = true;" onblur="document.querySelector('.search-form__input').disabled = false;" />
-		<input type="text" id="custom-link-name" placeholder="Enter link name" onfocus="document.querySelector('.search-form__input').disabled = true;" onblur="document.querySelector('.search-form__input').disabled = false;" />
-
-          <button id="add-custom-link">Add Link</button>
-          <button id="close-link-form">Cancel</button>
+		  <input type="text" id="custom-link-url" placeholder="Enter URL" onfocus="document.querySelector('.search-form__input').disabled = true;" onblur="document.querySelector('.search-form__input').disabled = false;" />
+		  <input type="text" id="custom-link-name" placeholder="Enter link name" onfocus="document.querySelector('.search-form__input').disabled = true;" onblur="document.querySelector('.search-form__input').disabled = false;" />
+		  <input type="text" id="custom-link-icon" placeholder="Icon path (optional)" onfocus="document.querySelector('.search-form__input').disabled = true;" onblur="document.querySelector('.search-form__input').disabled = false;" />
+  
+		  <div class="file-input-container">
+			<label for="import-file" class="file-input-button">Import Links from File</label>
+			<input type="file" id="import-file" class="file-input" accept=".json" />
+			<div id="file-name" class="file-name"></div>
+		  </div>
+  
+		  <div class="import-export-buttons">
+			<button id="export-links">Export Links</button>
+			<button id="add-custom-link">Add Link</button>
+			<button id="close-link-form">Cancel</button>
+		  </div>
         </div>
       </div>
     </div>
@@ -94,23 +104,20 @@
           <p id="header__weather-alert"></p>
           <p id="header__weather-info"></p>
         </div>
-        <form
-          class="search-form"
-          action="https://www.bing.com/"
-          method="get"
-          target="_self"
-        >
-          <input
-            type="text"
-            class="search-form__input"
-            autocomplete="on"
-            name="q"
-          />
-          <button type="submit" class="search-form__button">
-            <i class="fa fa-search"></i>
-          </button>
+      </div>
+      
+      <!-- Enhanced Search Bar -->
+      <div class="search-container">
+        <form class="search-form" action="https://www.google.com/search" method="get" target="_self">
+          <div class="search-input-container">
+            <input type="text" class="search-form__input" autocomplete="on" name="q" placeholder="Search the web..." />
+          </div>
+          <div class="search-engines">
+            <!-- Search engine buttons will be added by JavaScript -->
+          </div>
         </form>
       </div>
+      
       <div class="main">
         <a href="https://mail.google.com/mail/ca/u/1/#inbox">
           <img
@@ -158,9 +165,6 @@
         </a>
         <a href="https://git.rwth-aachen.de/umerghafoor">
           <img src="Icons/gitlab.png" style="width: 24px; height: 24px" />
-        </a>
-        <a href="https://www.researchgate.net/">
-          <img src="Icons/researchgate.png" style="width: 24px; height: 24px" />
         </a>
         <a href="https://www.instapaper.com/u">
           <img src="Icons/instapaper.png" style="width: 24px; height: 24px" />
@@ -213,15 +217,46 @@
             style="width: 24px; height: 24px"
           />
         </a>
+        <a href="https://tasksboard.com/app/">
+          <img src="Icons/Google Tasks.svg" style="width: 24px; height: 24px" />
+        </a>
         <a href="https://wakatime.com/dashboard">
           <img src="Icons/wakatime.png" style="width: 24px; height: 24px" />
         </a>
+        <a href="https://scholar.google.com/">
+          <img src="Icons/Google Scholar.png" style="width: 24px; height: 24px" />
+        </a>
+        <a href="https://www.researchgate.net/">
+          <img src="Icons/researchgate.png" style="width: 24px; height: 24px" />
+        </a>
+        <a href="https://www.sci-hub.st/" target="_blank">
+          <img src="Icons/ravenround_hs.gif" style="width: 24px; height: 24px" />
+        </a>
+        <a href="https://www.connectedpapers.com/">
+          <img src="Icons/2dcb1-www.connectedpapers.com.png" style="width: 24px; height: 24px" />
+        </a>
+        <a href="https://researchrabbitapp.com/home">
+          <img src="Icons/researchrabbit.png" style="width: 24px; height: 24px" />
+        </a>
+        <a href="https://www.notion.so/3a0e5e47f2384191bfb320f4482a2b89">
+          <img src="Icons/notion-logo.svg" style="width: 24px; height: 24px" />
+        </a>
+        <a href="https://chat.deepseek.com/">
+          <img src="Icons/icons8-deepseek.svg" style="width: 24px; height: 24px" />
+        </a>
+        <a href="https://app.milanote.com/1PRlK61qDN2w3q/home">
+          <img src="Icons/Milanote.svg" style="width: 24px; height: 24px" />
+        </a>
+        <!-- For Adding more links create <a></a> here -->
       </div>
-      <div class="link-box">
-        <div class="dynamic-links-menu">
-          <!-- Dynamic links will be injected here -->
+
+      <div class="box-parent">
+        <div class="link-box">
+          <div class="dynamic-links-menu">
+            <!-- Dynamic links will be injected here -->
+          </div>
+          <button id="open-link-form" class="open-link-form-button">+</button>
         </div>
-        <button id="open-link-form" class="open-link-form-button">+</button>
       </div>
       <div class="quotebox">
         <div id="quote" class="quote">Loading...</div>
@@ -233,6 +268,7 @@
     <script src="js/weather.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/header.js"></script>
-    <script src="js/dynamiclinks.js"></script>
+    <script src="js/search-engines.js"></script>
+    <script src="js/links-manager.js"></script>
   </body>
 </html>

@@ -1,24 +1,24 @@
-// Quotes data directly in JavaScript
+
 const quotes = [
     {"quote": "The only way to do great work is to love what you do.", "author": "Steve Jobs"},
     {"quote": "Science is a way of thinking much more than it is a body of knowledge.", "author": "Carl Sagan"},
     {"quote": "The important thing is not to stop questioning. Curiosity has its own reason for existing.", "author": "Albert Einstein"},
     {"quote": "Mathematics is the language with which God has written the universe.", "author": "Galileo Galilei"},
     {"quote": "The computer was born to solve problems that did not exist before.", "author": "Bill Gates"},
-    {"quote": "In physics, you don’t have to be crazy, but it helps.", "author": "Niels Bohr"},
+    {"quote": "In physics, you don't have to be crazy, but it helps.", "author": "Niels Bohr"},
     {"quote": "The greatest enemy of knowledge is not ignorance, it is the illusion of knowledge.", "author": "Stephen Hawking"},
     {"quote": "The best way to predict the future is to invent it.", "author": "Alan Kay"},
     {"quote": "We are made of star-stuff. We are a way for the universe to know itself.", "author": "Carl Sagan"},
-    {"quote": "You miss 100% of the shots you don’t take.", "author": "Wayne Gretzky"},
+    {"quote": "You miss 100% of the shots you don't take.", "author": "Wayne Gretzky"},
     {"quote": "To invent, you need a good imagination and a pile of junk.", "author": "Thomas Edison"},
     {"quote": "Mathematics is the most beautiful and most powerful creation of the human spirit.", "author": "Stefan Banach"},
     {"quote": "All models are wrong, but some are useful.", "author": "George E.P. Box"},
     {"quote": "If you want to go fast, go alone. If you want to go far, go together.", "author": "African Proverb"},
-    {"quote": "The scientist is not a person who gives the right answers, he’s one who asks the right questions.", "author": "Claude Lévi-Strauss"},
+    {"quote": "The scientist is not a person who gives the right answers, he's one who asks the right questions.", "author": "Claude Lévi-Strauss"},
     {"quote": "The best way to learn is to do.", "author": "Richard Branson"},
     {"quote": "Everything should be made as simple as possible, but not simpler.", "author": "Albert Einstein"},
     {"quote": "The beauty of a living thing is not the atoms that go into it, but the way those atoms are put together.", "author": "Carl Sagan"},
-    {"quote": "Technology is anything that wasn’t around when you were born.", "author": "Alan Kay"},
+    {"quote": "Technology is anything that wasn't around when you were born.", "author": "Alan Kay"},
     {"quote": "Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution.", "author": "Albert Einstein"},
     {"quote": "Mathematics is the queen of the sciences.", "author": "Carl Friedrich Gauss"},
     {"quote": "There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle.", "author": "Albert Einstein"},
@@ -41,7 +41,7 @@ const quotes = [
     {"quote": "The harder I work, the luckier I get.", "author": "Samuel Goldwyn"},
     {"quote": "In science, there are no shortcuts to truth.", "author": "Karl Popper"},
     {"quote": "You don't have to be great to start, but you have to start to be great.", "author": "Zig Ziglar"},
-    {"quote": "Without data, you’re just another person with an opinion.", "author": "W. Edwards Deming"},
+    {"quote": "Without data, you're just another person with an opinion.", "author": "W. Edwards Deming"},
     {"quote": "We are not just a collection of molecules. We are a collection of stories.", "author": "Neil deGrasse Tyson"},
     {"quote": "The greatest glory in living lies not in never falling, but in rising every time we fall.", "author": "Nelson Mandela"},
     {"quote": "Science is a way of life. It is a perspective on life.", "author": "James Lovelock"},
@@ -49,7 +49,7 @@ const quotes = [
     {"quote": "The mind is everything. What you think you become.", "author": "Buddha"},
     {"quote": "One small step for man, one giant leap for mankind.", "author": "Neil Armstrong"},
     {"quote": "We do not inherit the earth from our ancestors, we borrow it from our children.", "author": "Native American Proverb"},
-    {"quote": "The more I learn, the more I realize how much I don’t know.", "author": "Albert Einstein"},
+    {"quote": "The more I learn, the more I realize how much I don't know.", "author": "Albert Einstein"},
     {"quote": "Mathematics is the music of reason.", "author": "James Joseph Sylvester"},
     {"quote": "A scientist is a person who has the habit of inquiry and the desire to find out.", "author": "Richard Feynman"},
     {"quote": "If you cannot do great things, do small things in a great way.", "author": "Napoleon Hill"},
@@ -66,7 +66,7 @@ const quotes = [
     {"quote": "Mathematics is a powerful tool for understanding the world.", "author": "Andrew Wiles"},
     {"quote": "If you want to lift yourself up, lift up someone else.", "author": "Booker T. Washington"},
     {"quote": "The pursuit of knowledge is more valuable than the knowledge itself.", "author": "Rumi"},
-    {"quote": "Rise above sectional interests and private ambitions... pass from matter to spirit. ‘In the name of the great God, the creator, the sustainer,’ pray the words of Rumi, ‘I dedicate this life to the higher cause.’", "author": "Iqbal"},
+    {"quote": "Rise above sectional interests and private ambitions... pass from matter to spirit. ‘In the name of the great God, the creator, the sustainer,' pray the words of Rumi, ‘I dedicate this life to the higher cause.'", "author": "Iqbal"},
     {"quote": "The only thing we have to fear is fear itself.", "author": "Franklin D. Roosevelt"},
     {"quote": "The universe is not only stranger than we imagine, it is stranger than we can imagine.", "author": "Arthur Eddington"},
     {"quote": "The greatest wealth is to live content with little.", "author": "Plato"},
@@ -88,7 +88,7 @@ const quotes = [
     {"quote": "Mathematics is the queen of the sciences and arithmetic the queen of mathematics.", "author": "Carl Friedrich Gauss"},
     {"quote": "To know is nothing at all; to imagine is everything.", "author": "Anatole France"},
     {"quote": "Science is the belief in the ignorance of experts.", "author": "Richard Feynman"},
-    {"quote": "The more I learn, the more I realize how much I don’t know.", "author": "Albert Einstein"},
+    {"quote": "The more I learn, the more I realize how much I don't know.", "author": "Albert Einstein"},
     {"quote": "You have to dream before your dreams can come true.", "author": "A.P.J. Abdul Kalam"},
     {"quote": "To improve is to change; to be perfect is to change often.", "author": "Winston Churchill"},
     {"quote": "The most beautiful thing we can experience is the mysterious. It is the source of all true art and science.", "author": "Albert Einstein"},
@@ -106,41 +106,118 @@ const quotes = [
     {"quote": "The journey of a thousand miles begins with one step.", "author": "Lao Tzu"},
     {"quote": "Imagination is more important than knowledge.", "author": "Albert Einstein"},
     {"quote": "The best way to predict the future is to invent it.", "author": "Alan Kay"},
-    {"quote": "You can’t build a reputation on what you are going to do.", "author": "Henry Ford"},
+    {"quote": "You can't build a reputation on what you are going to do.", "author": "Henry Ford"},
     {"quote": "The measure of intelligence is the ability to change.", "author": "Albert Einstein"},
     {"quote": "The important thing is not to stop questioning. Curiosity has its own reason for existing.", "author": "Albert Einstein"},
-    {"quote": "The only way to do great work is to love what you do.", "author": "Steve Jobs"}
+    {"quote": "The only way to do great work is to love what you do.", "author": "Steve Jobs"},
+    {"quote": "The unexamined life is not worth living.", "author": "Socrates"},
+  {"quote": "I think, therefore I am.", "author": "René Descartes"},
+  {"quote": "Happiness is the highest good.", "author": "Aristotle"},
+  {"quote": "Man is the measure of all things.", "author": "Protagoras"},
+  {"quote": "He who has a why to live can bear almost any how.", "author": "Friedrich Nietzsche"},
+  {"quote": "To be is to be perceived.", "author": "George Berkeley"},
+  {"quote": "Freedom is the recognition of necessity.", "author": "Friedrich Engels"},
+  {"quote": "Hell is other people.", "author": "Jean-Paul Sartre"},
+  {"quote": "The only thing I know is that I know nothing.", "author": "Socrates"},
+  {"quote": "Life must be understood backward. But it must be lived forward.", "author": "Søren Kierkegaard"},
+  {"quote": "The mind is everything. What you think you become.", "author": "Buddha"},
+  {"quote": "It is not what happens to you, but how you react to it that matters.", "author": "Epictetus"},
+  {"quote": "Happiness depends upon ourselves.", "author": "Aristotle"},
+  {"quote": "We are what we repeatedly do. Excellence, then, is not an act but a habit.", "author": "Aristotle"},
+  {"quote": "No man ever steps in the same river twice, for it’s not the same river and he’s not the same man.", "author": "Heraclitus"},
+  {"quote": "God is dead.", "author": "Friedrich Nietzsche"},
+  {"quote": "That man is wisest who, like Socrates, realizes that his wisdom is worthless.", "author": "Plato"},
+  {"quote": "To live is to suffer, to survive is to find some meaning in the suffering.", "author": "Friedrich Nietzsche"},
+  {"quote": "The greater the difficulty, the more glory in surmounting it.", "author": "Epicurus"},
+  {"quote": "Man is condemned to be free.", "author": "Jean-Paul Sartre"},
+  {"quote": "The aim of the wise is not to secure pleasure, but to avoid pain.", "author": "Aristotle"},
+  {"quote": "Without music, life would be a mistake.", "author": "Friedrich Nietzsche"},
+  {"quote": "The function of prayer is not to influence God, but rather to change the nature of the one who prays.", "author": "Søren Kierkegaard"},
+  {"quote": "Science is what you know. Philosophy is what you don’t know.", "author": "Bertrand Russell"},
+  {"quote": "If you hate a person, you hate something in him that is part of yourself.", "author": "Hermann Hesse"},
+  {"quote": "We are too weak to discover the truth by reason alone.", "author": "Blaise Pascal"},
+  {"quote": "The fear of death follows from the fear of life. A man who lives fully is prepared to die at any time.", "author": "Mark Twain"},
+  {"quote": "A philosopher is a person who dreams of things more than they can be accomplished.", "author": "Karl Jaspers"},
+  {"quote": "Even while they teach, men learn.", "author": "Seneca"},
+  {"quote": "Be kind, for everyone you meet is fighting a harder battle.", "author": "Plato"},
+  {"quote": "History repeats itself, first as tragedy, second as farce.", "author": "Karl Marx"},
+  {"quote": "Liberty consists in doing what one desires.", "author": "John Stuart Mill"},
+  {"quote": "I count him braver who overcomes his desires than him who conquers his enemies; for the hardest victory is over self.", "author": "Aristotle"},
+  {"quote": "Time is the wisest counselor of all.", "author": "Pericles"},
+  {"quote": "God is not willing to do everything, and thus take away our free will and that share of glory which belongs to us.", "author": "Niccolò Machiavelli"},
+  {"quote": "Happiness is not something ready-made. It comes from your own actions.", "author": "Dalai Lama"},
+  {"quote": "Philosophy is at once the most sublime and the most trivial of human pursuits.", "author": "William James"},
+  {"quote": "The end of labor is to gain leisure.", "author": "Aristotle"},
+  {"quote": "The greatest way to live with honor in this world is to be who we pretend to be.", "author": "Socrates"},
+  {"quote": "You cannot step into the same river twice.", "author": "Heraclitus"},
+  {"quote": "The only thing worse than being blind is having sight but no vision.", "author": "Helen Keller"},
+  {"quote": "The purpose of life is not to be happy. It is to be useful, honorable, and to have it make some difference that you have lived and lived well.", "author": "Ralph Waldo Emerson"},
+  {"quote": "If you want to live a happy life, tie it to a goal, not to people or things.", "author": "Albert Einstein"},
+  {"quote": "Life is really simple, but we insist on making it complicated.", "author": "Confucius"},
+  {"quote": "We live in the best of all possible worlds.", "author": "Gottfried Wilhelm Leibniz"},
+  {"quote": "There is no greater good than to seek the truth.", "author": "Epictetus"},
+  {"quote": "In the middle of difficulty lies opportunity.", "author": "Albert Einstein"},
+  {"quote": "Those who know do not speak. Those who speak do not know.", "author": "Lao Tzu"},
+  {"quote": "The ultimate aim of the ego is not to see something, but to be something.", "author": "Oscar Wilde"},
+  {"quote": "Everything has beauty, but not everyone sees it.", "author": "Confucius"},
+  {"quote": "The best way to predict the future is to create it.", "author": "Peter Drucker"},
+  {"quote": "The only way to deal with fear is to face it head on.", "author": "Robert Frost"},
+  {"quote": "Happiness is not an abstract idea, but something we must achieve.", "author": "Aristotle"},
+  {"quote": "He who thinks great thoughts, often makes great errors.", "author": "Martin Heidegger"},
+  {"quote": "The greatest philosophers of all time are those who do not serve heaven.", "author": "Friedrich Nietzsche"},
+  {"quote": "A philosopher is a man who asks himself the question, 'What does it mean to be human?'", "author": "Mahatma Gandhi"},
+  {"quote": "The only way to deal with this is to face it.", "author": "Albert Camus"},
+  {"quote": "Reality is that which, when you stop believing in it, doesn’t go away.", "author": "Philip K. Dick"},
+  {"quote": "The essence of being human is that one does not seek perfection.", "author": "Jiddu Krishnamurti"},
+  {"quote": "I am, therefore I think.", "author": "Karl Popper"},
+  {"quote": "If you cannot change your mind, you cannot change anything.", "author": "George Bernard Shaw"},
+  {"quote": "The highest good is not pleasure, but virtue.", "author": "Plato"},
+  {"quote": "Philosophy begins in wonder.", "author": "Plato"},
+  {"quote": "The only way to eliminate danger is to take away freedom.", "author": "John Stuart Mill"},
+  {"quote": "Philosophy is the science of thought; it examines the nature of thought itself.", "author": "Gottlob Frege"},
+  {"quote": "The end of philosophy is to know reality.", "author": "Ludwig Wittgenstein"},
+  {"quote": "Life can only be understood backwards; but it must be lived forwards.", "author": "Søren Kierkegaard"},
+  {"quote": "All that is necessary for the triumph of evil is that good men do nothing.", "author": "Edmund Burke"},
+  {"quote": "The greatest philosopher is not the one who knows the most but the one who does the most with what he knows.", "author": "Socrates"},
+  {"quote": "I am therefore I exist.", "author": "René Descartes"},
+  {"quote": "It is not the answer that enlightens, but the question.", "author": "Eugene Ionesco"},
+  {"quote": "Philosophy is the highest music.", "author": "Plato"},
+  {"quote": "A philosopher is a man who can make himself understood by a child.", "author": "Epictetus"},
+  {"quote": "The most important thing is to enjoy your life—to be happy—it's all that matters.", "author": "Audrey Hepburn"},
+  {"quote": "Philosophy: A blind man's description of an elephant.", "author": "Buddha"},
+  {"quote": "All that we are is the result of what we have thought.", "author": "Buddha"},
+  {"quote": "Life must be lived as play.", "author": "Plato"},
+  {"quote": "The ends justify the means.", "author": "Niccolò Machiavelli"},
+  {"quote": "The greatest happiness of the greatest number is the foundation of morals and legislation.", "author": "Jeremy Bentham"},
+  {"quote": "The life of man is solitary, poor, nasty, brutish, and short.", "author": "Thomas Hobbes"},
+  {"quote": "The meaning of life is that it is to be lived, not to be conceptualized.", "author": "Ralph Waldo Emerson"},
+  {"quote": "A person who never made a mistake never tried anything new.", "author": "Albert Einstein"},
+  {"quote": "What does not kill us makes us stronger.", "author": "Friedrich Nietzsche"},
+  {"quote": "He who has a why to live can bear almost any how.", "author": "Friedrich Nietzsche"},
+  {"quote": "The philosopher is like a man who has his head above water; thus he is a drowning man.", "author": "Friedrich Nietzsche"},
 ];
 
 function displayRandomQuote() {
-    // Select a random quote
     const randomIndex = Math.floor(Math.random() * quotes.length);
     const randomQuote = quotes[randomIndex];
 
-    // Display the quote and author with separate clickable elements
     const quoteElement = document.getElementById('quote');
     quoteElement.innerHTML = `
         <span id="quoteText" style="cursor: pointer;">"${randomQuote.quote}"</span> 
         <span id="quoteAuthor" style="cursor: pointer;">- ${randomQuote.author}</span>
     `;
 
-    // Add click event listener for the quote text
     document.getElementById('quoteText').onclick = function() {
-        // Create a search query using the quote
         const query = `${randomQuote.quote}`;
         const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
         
-        // Open the search results in a new tab
         window.open(searchUrl, '_blank');
     };
 
-    // Add click event listener for the author name
     document.getElementById('quoteAuthor').onclick = function() {
-        // Create a search query using the author's name
         const query = `${randomQuote.author}`;
         const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
         
-        // Open the search results in a new tab
         window.open(searchUrl, '_blank');
     };
 }
