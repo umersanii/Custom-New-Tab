@@ -1,5 +1,10 @@
 let customLinks = []
 
+// Default icon as a data URI (simple link/globe icon)
+function getDefaultIcon() {
+  return 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM4MWExYzEiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCI+PC9jaXJjbGU+PGxpbmUgeDE9IjIiIHkxPSIxMiIgeDI9IjIyIiB5Mj0iMTIiPjwvbGluZT48cGF0aCBkPSJNMTIgMmExNSAxNSAwIDAgMSA0IDEwIDE1IDE1IDAgMCAxLTQgMTAgMTUgMTUgMCAwIDEtNC0xMCAxNSAxNSAwIDAgMSA0LTEweiI+PC9wYXRoPjwvc3ZnPg=='
+}
+
 function loadCustomLinks() {
   const container = document.querySelector(".dynamic-links-menu")
 
@@ -26,9 +31,13 @@ function renderLinks(container) {
 
     const img = document.createElement("img")
     
+    // Set default icon immediately to prevent flickering
+    img.src = getDefaultIcon()
+    img.alt = link.name
+    
     if (link.icon) {
-      img.src = link.icon.startsWith("http") ? link.icon : `Icons/${link.icon}`
-      img.alt = link.name
+      const iconSrc = link.icon.startsWith("http") ? link.icon : `Icons/${link.icon}`
+      img.src = iconSrc
       img.onerror = () => {
         fetchFavicon(link.url, img)
       }
@@ -68,17 +77,26 @@ function fetchFavicon(url, imgElement) {
     
     const googleFaviconUrl = `https://www.google.com/s2/favicons?domain=${domain}&sz=64`
     
-    imgElement.src = googleFaviconUrl
-    imgElement.onerror = () => {
-      const directFaviconUrl = `https://${domain}/favicon.ico`
-      imgElement.src = directFaviconUrl
-      imgElement.onerror = () => {
-        imgElement.src = "Icons/icons8-link-50.png"
-      }
+    // Create a new image to test if the favicon loads
+    const testImg = new Image()
+    testImg.onload = () => {
+      imgElement.src = googleFaviconUrl
     }
+    testImg.onerror = () => {
+      const directFaviconUrl = `https://${domain}/favicon.ico`
+      const testImg2 = new Image()
+      testImg2.onload = () => {
+        imgElement.src = directFaviconUrl
+      }
+      testImg2.onerror = () => {
+        // Keep the default icon if all else fails
+      }
+      testImg2.src = directFaviconUrl
+    }
+    testImg.src = googleFaviconUrl
   } catch (error) {
     console.error("Error fetching favicon:", error)
-    imgElement.src = "Icons/icons8-link-50.png"
+    // Keep the default icon on error
   }
 }
 

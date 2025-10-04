@@ -7,13 +7,19 @@ let radioCelsius = document.getElementById('celsius');
 let radioFahrenheit = document.getElementById('fahrenheit');
 let weatherLS = localStorage.getItem('weather');
 
+// Use API key from config if available
+const DEFAULT_API_KEY = window.CONFIG?.WEATHER_API_KEY || '';
+
 if (weatherLS !== null) {
-	let key = JSON.parse(weatherLS).key;
+	let key = JSON.parse(weatherLS).key || DEFAULT_API_KEY;
 	let city = JSON.parse(weatherLS).city;
 
-	keyInput.placeholder = key;
+	keyInput.placeholder = key ? '••••••••••••••••' : 'Enter key';
 	cityInput.placeholder = city;
 	getWeatherInfo(key, city);
+} else if (DEFAULT_API_KEY) {
+	// If config has API key but no localStorage, use it
+	getWeatherInfo(DEFAULT_API_KEY, null);
 } else {
 	getWeatherInfo(null, null);
 }
@@ -26,6 +32,8 @@ apply.onclick = () => {
 	if (key === '') {
 		if (weatherLS !== null) {
 			key = JSON.parse(weatherLS).key;
+		} else if (DEFAULT_API_KEY) {
+			key = DEFAULT_API_KEY;
 		}
 	} else {
 		weatherAlert.style.display = 'none';
@@ -42,7 +50,7 @@ apply.onclick = () => {
 	radioFahrenheit.checked ? tempUnit = 'F' : tempUnit = 'C';
 
 	let info = {
-		key: key,
+		key: key || DEFAULT_API_KEY,
 		city: city,
 		tempUnit: tempUnit
 	};
@@ -55,7 +63,7 @@ apply.onclick = () => {
 
 	keyInput.value = '';
 	keyInput.blur();
-	keyInput.placeholder = key;
+	keyInput.placeholder = key ? '••••••••••••••••' : 'Enter key';
 
 	getWeatherInfo(key, city);
 }
