@@ -212,6 +212,37 @@ a {
   border: 0px solid var(--accent);
 }
 
+.search-button {
+  background: var(--accent);
+  border: none;
+  border-radius: 20px;
+  width: 48px;
+  height: 48px;
+  margin-left: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: white;
+  flex-shrink: 0;
+}
+
+.search-button:hover {
+  background-color: #5e81ac;
+  transform: scale(1.05);
+}
+
+.search-button:active {
+  transform: scale(0.95);
+}
+
+.search-button__icon {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+}
+
 .search-engines {
   display: flex;
   justify-content: center;

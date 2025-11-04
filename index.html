@@ -105,7 +105,32 @@
           <p id="header__weather-info"></p>
         </div>
       </div>
-      
+      <div class="search-container">
+        <form
+          class="search-form"
+          id="perplexity-search"
+          action="https://www.perplexity.ai/search"
+          method="get"
+          target="_blank"
+        >
+          <label for="perplexity-q" class="visually-hidden"></label>
+          <input
+            class="search-form__input"
+            id="perplexity-q"
+            name="q"
+            type="search"
+            placeholder="Search Perplexity..."
+            autocomplete="off"
+            aria-label="Search Perplexity"
+          />
+          <button type="submit" class="search-button" aria-label="Search" title="Search">
+            <svg class="search-button__icon" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+              <circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="2" fill="none"></circle>
+              <path d="M20.5 20.5L16 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </form>
+      </div>
 
       
       <div class="main">
@@ -121,21 +146,10 @@
             style="width: 48px; height: 48px"
           />
         </a>
-        <a href="https://www.monkeytype.com/">
-          <img
-            src="Icons/Monkeytype.svg"
-            style="width: 48px; height: 48px"
-          />
-        </a>
+
         <a href="https://github.com/">
           <img
             src="Icons/icons8-github-50.svg"
-            style="width: 48px; height: 48px"
-          />
-        </a>
-        <a href="https://www.instagram.com/">
-          <img
-            src="Icons/instagram.png"
             style="width: 48px; height: 48px"
           />
         </a>
@@ -163,12 +177,7 @@
             style="width: 48px; height: 48px"
           />
         </a>
-        <a href="https://music.youtube.com/">
-          <img
-            src="Icons/icons8-youtube-music-50.svg"
-            style="width: 48px; height: 48px"
-          />
-        </a>
+
         <a href="https://classroom.google.com/">
           <img
             src="Icons/Prob.svg"
@@ -194,6 +203,44 @@
                 alt="Tailscale"
               />
             </a>
+            <a href="https://www.overleaf.com/" target="_blank" rel="noopener noreferrer">
+              <img src="Icons/overleaf.svg" style="width: 48px; height: 48px" alt="Overleaf" />
+            </a>
+            <a href="https://console.neon.tech/app/org-steep-haze-67188770/projects" target="_blank" rel="noopener noreferrer">
+              <svg width="48" height="48" viewBox="0 0 58 58" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Neon">
+                <title>Neon</title>
+                <defs>
+                  <linearGradient id="paint1_linear_10558_11777" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#00E5FF"/>
+                    <stop offset="1" stop-color="#7C4DFF"/>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 10C0 4.47715 4.47705 0 9.99976 0H47.9989C53.5216 0 57.9986 4.47715 57.9986 10V42.3189C57.9986 48.0326 50.7684 50.5124 47.2618 46.0014L36.2991 31.8988V49C36.2991 53.9706 32.2698 58 27.2993 58H9.99976C4.47705 58 0 53.5228 0 48V10ZM9.99976 8C8.89522 8 7.99981 8.89543 7.99981 10V48C7.99981 49.1046 8.89522 50 9.99976 50H27.5993C28.1516 50 28.2993 49.5523 28.2993 49V26.0673C28.2993 20.3536 35.5295 17.8738 39.0361 22.3848L49.9988 36.4874V10C49.9988 8.89543 50.1034 8 48.9988 8H9.99976Z" fill="url(#paint1_linear_10558_11777)"/>
+              </svg>
+            </a>
+            <a href="https://us-east-1.console.aws.amazon.com/iot/home?region=us-east-1#/test" target="_blank" rel="noopener noreferrer">
+              <img src="Icons/IoT Core.svg" style="width: 48px; height: 48px" alt="AWS IoT" />
+            </a>
+           <!-- Entertainment -->
+          <a href="https://music.youtube.com/">
+          <img
+            src="Icons/icons8-youtube-music-50.svg"
+            style="width: 48px; height: 48px"
+          />
+        </a>
+        <a href="https://www.instagram.com/">
+          <img
+            src="Icons/instagram.png"
+            style="width: 48px; height: 48px"
+          />
+        </a>
+        <a href="https://www.monkeytype.com/">
+          <img
+            src="Icons/Monkeytype.svg"
+            style="width: 48px; height: 48px"
+          />
+        </a>
+            
           </a>
         </a>
 
@@ -207,7 +254,7 @@
           <img src="Icons/edx-logo-elm.svg" style="width: 24px; height: 24px" />
         </a>
         <a href="https://git.rwth-aachen.de/umerghafoor">
-          <img src="Icons/gitlab.png" style="width: 24px; height: 24px" />
+          <img src="Icons/gitlab.png" style="width: 24px; heKOight: 24px" />
         </a>
         <a href="https://www.instapaper.com/u">
           <img src="Icons/instapaper.png" style="width: 24px; height: 24px" />
@@ -217,8 +264,7 @@
             src="Icons/icons8-gmail-50.svg"
             style="width: 24px; height: 24px"
           />
-        </a>
-        <a href="https://calendar.google.com/">
+        </m/">
           <img
             src="Icons/icons8-google-calendar-50.svg"
             style="width: 24px; height: 24px"
